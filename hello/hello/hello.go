@@ -18,6 +18,7 @@ func main() {
 	log.SetPrefix("hello: ")
 	log.SetFlags(0)
 
+	// Interesting bit here is that I can ignore the error if I want
 	message, err := fetcher.GetGreeting("Tunji")
 	if err != nil {
 		log.Fatal(err)
