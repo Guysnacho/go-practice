@@ -7,6 +7,7 @@ import (
 	// We've got an alias to the actual fetcher package.
 	// Sorta exporting a different name for it too
 	fetcher "example.com/greetings"
+	// go mod edit -replace example.com/greetings=../fetcher is the real hero here
 )
 
 func main() {
