@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	// We've got an alias to the actual fetcher package.
 	// Sorta exporting a different name for it too
@@ -11,7 +12,17 @@ import (
 )
 
 func main() {
-	message := fetcher.GetQuote()
-	fmt.Println("Hello World, I can compile and yap :)")
-	fmt.Println(message)
+	// Set properties of the predefined Logger, including
+	// the log entry prefix and a flag to disable printing
+	// the time, source file, and line number.
+	log.SetPrefix("hello: ")
+	log.SetFlags(0)
+
+	message, err := fetcher.GetGreeting("Tunji")
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println(message + "\n=========")
+		log.Default().Println("Mission accomplished")
+	}
 }
