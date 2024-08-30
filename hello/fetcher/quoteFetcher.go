@@ -4,6 +4,7 @@ package fetcher
 import (
 	"errors"
 	"fmt"
+	"math/rand"
 
 	"rsc.io/quote"
 )
@@ -17,8 +18,17 @@ func GetGreeting(name string) (string, error) {
 	if name == "" {
 		return "", errors.New("empty name")
 	} else {
-		message := fmt.Sprintf("Hey %v. Here's your quote of the day - \n\n%v\n", name, quote.Glass())
+		message := fmt.Sprintf("Hey %v. Here's your quote of the day - \n\n%v\n", name, GetRandomGreeting())
 		message2 := fmt.Sprintf("\nThat'll be $%d ✨✨", 1000)
 		return string(fmt.Append([]byte(message), message2)), nil
 	}
+}
+
+func GetRandomGreeting() string {
+	formats := []string{
+		quote.Opt(),
+		quote.Glass(),
+		quote.Go(),
+	}
+	return formats[rand.Intn(len(formats))]
 }
