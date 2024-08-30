@@ -30,3 +30,10 @@ His [Elevator Music set](https://www.youtube.com/watch?v=iVZkcDOal7w) has been o
 ### Started working with Go again
 
 I've been interested for about as long as this repo's existed. That was Sep 11, 2021. Glad we're cooking again. End goal is to make a ridesharing orchestrator to handle [Prestige](https://github.com/Guysnacho/prestige) traffic and to make the [TwoTone API](https://github.com/Guysnacho/twotoneweb) better, less wasteful, kinda cooler, more fun to work on.
+
+## Changelog
+
+- Cross package referencing
+Kinda got it for externals but internal redirect is funny
+- Hello world with a quote
+go mod edit replace is kinda cool too
